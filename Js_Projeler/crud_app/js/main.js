@@ -10,6 +10,7 @@ const input = document.querySelector("#input");
 const itemList = document.querySelector(".item-list");
 const alert = document.querySelector(".alert");
 const addButton = document.querySelector(".submit-btn");
+const clearButton = document.querySelector(".clear-btn");
 
 // console.log(form, input);
 
@@ -28,6 +29,7 @@ const addItem = (e) => {
     addToLocalStorage(id, value);
   } else if (value !== "" && editMode) {
     editItem.innerHTML = value;
+    updateLocalStorage(editItemId, value);
     showAlert("Eleman Güncellendi", "success");
     setToDefault();
   }
@@ -52,7 +54,13 @@ const deleteItem = (e) => {
   const id = element.dataset.id;
   // Bu elemanı kaldır
   itemList.removeChild(element);
+  removeFromLocalStorage(id);
   showAlert("Eleman Silindi", "danger");
+  console.log(itemList);
+  // Eğerki hiç eleman yoksa sıfırlama butonunu kaldır
+  if (!itemList.children.length) {
+    clearButton.style.display = "none";
+  }
 };
 // Elemanları güncelleyecek fonksiyon
 const editItems = (e) => {
@@ -70,7 +78,14 @@ const setToDefault = () => {
   editItemId = "";
   addButton.textContent = "Ekle";
 };
-
+// * Sayfa yüklendiğinde elemanları render edecek fonksiyo
+const renderItems = () => {
+  let items = getFromLocalStorage();
+  console.log(items);
+  if (items.length > 0) {
+    items.forEach((item) => createElement(item.id, item.value));
+  }
+};
 // * Eleman oluşturan fonksiyon
 
 const createElement = (id, value) => {
@@ -103,11 +118,55 @@ const createElement = (id, value) => {
   itemList.appendChild(newDiv);
   showAlert("Eleman Eklendi", "success");
 };
+// * Sıfırlama yapan fonksiyon
+const clearItems = () => {
+  const items = document.querySelectorAll(".items-list-item");
+  if (items.length > 0) {
+    items.forEach((item) => {
+      itemList.removeChild(item);
+    });
+    clearButton.style.display = "none";
+    showAlert("Liste Boş", "danger");
+    // Localstorage ı temizle
+    localStorage.removeItem("items");
+  }
+};
 // * Localstorage a kayıt yapan fonksiyon
 const addToLocalStorage = (id, value) => {
   const item = { id, value };
-  localStorage.setItem("berke", JSON.stringify(item));
+  let items = getFromLocalStorage();
+  items.push(item);
+  localStorage.setItem("items", JSON.stringify(items));
+};
+// * Localstorage dan verileri alan fonksiyon
+const getFromLocalStorage = () => {
+  return localStorage.getItem("items")
+    ? JSON.parse(localStorage.getItem("items"))
+    : [];
+};
+// * Localstorage dan verileri kaldıran fonksiyon
+const removeFromLocalStorage = (id) => {
+  let items = getFromLocalStorage();
+  items = items.filter((item) => item.id !== id);
+  localStorage.setItem("items", JSON.stringify(items));
+};
+// * Localstorage ı güncelleyen fonksiyon
+const updateLocalStorage = (id, newValue) => {
+  let items = getFromLocalStorage();
+  items = items.map((item) => {
+    if (item.id === id) {
+      // Spread Operatör: Bu özellik bir elemanı güncellerken veri kaybını önlemek için kullanılır.Burada biz obje içerisinde yer alan value yu güncelledik.Ama bunu yaparken id değerini kaybetmemek için Spread Operatör
+      return { ...item, value: newValue };
+    }
+    return item;
+  });
+  localStorage.setItem("items", JSON.stringify(items));
 };
 
 // ? Olay İzleyicileri
+// * Formun gönderildiği anı yakala
 form.addEventListener("submit", addItem);
+// * Sayfanın  yüklendiği anı yakala
+window.addEventListener("DOMContentLoaded", renderItems);
+// Clear Button a tıklanınca elemanları sıfırlama
+clearButton.addEventListener("click", clearItems);
