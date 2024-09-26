@@ -243,6 +243,12 @@ footer {
   gap: 16px;
   margin-top: 40px;
 }
+@media (max-width: 700px) {
+  .cart-box {
+    grid-template-columns: 1fr;
+  }
+}
+
 #cartItems {
   display: grid;
   row-gap: 16px;

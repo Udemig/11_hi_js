@@ -6,7 +6,6 @@ import {
 } from "./utils.js";
 
 let cart = getFromLocalStorage();
-// console.log(cart);
 
 // * Sepete Ekleme Yapacak Fonksiyon
 export function addToCart(event, products) {
@@ -46,6 +45,7 @@ export function addToCart(event, products) {
     }
   }
 }
+
 // Sepetten Ürünleri Silecek Fonksiyon
 const removeFromCart = (event) => {
   // Silinecek elemanın id sine eriştik
@@ -66,8 +66,8 @@ const removeFromCart = (event) => {
 export const renderCartItems = () => {
   // Html de elemanların render edileceği kapsayıcıya eriş
   const cartItemsElement = document.querySelector("#cartItems");
-  // Sepetteki herbir eleman için cart item render et
 
+  // Sepetteki herbir eleman için cart item render et
   cartItemsElement.innerHTML = cart
     .map(
       (item) =>
@@ -94,23 +94,54 @@ export const renderCartItems = () => {
   `
     )
     .join("");
+
   // Remove butonlarına eriş
   const removeButtons = document.querySelectorAll(".remove-from-cart");
   for (let i = 0; i < removeButtons.length; i++) {
     const removeButton = removeButtons[i];
     removeButton.addEventListener("click", removeFromCart);
   }
+
   // Quantity İnputlarına eriş
-  const quantityInputs = document.getElementsByClassName("cart-item-quantity");
-  //   console.log(quantityInputs);
+  const quantityInputs = document.getElementsByClassName(
+    "cart-item-quantity"
+  );
+
+  // her bir inputun değişme olayını izle
   for (let i = 0; i < quantityInputs.length; i++) {
     const quantityInput = quantityInputs[i];
-    quantityInput.addEventListener("change", () => {
-      console.log(`İnput Çalıştı`);
-    });
+    quantityInput.addEventListener("change", onQuantityChange);
   }
 };
 
+//* Inputlar değiştiğinde çalışıcak olan fonksiyon
+const onQuantityChange = (event) => {
+  const newQuantity = +event.target.value;
+  const productId = +event.target.dataset.id;
+
+  // yeni miktar 0'dan büyükse:
+  if (newQuantity > 0) {
+    // id'si bilinen elemanın bilgilerini bul
+    const cartItem = cart.find((item) => item.id === productId);
+
+    // eğerki eleman sepette bulunamadıysa fonksiyonu durdur
+    if (!cartItem) return;
+
+    // ürünün miktarını güncelle
+    cartItem.quantity = newQuantity;
+
+    // localstorage'ı güncelle
+    saveToLocalStorage(cart);
+
+    // sepet ikonundaki değeri güncelle
+    updateCartIcon(cart);
+
+    // toplam fiyatı güncelle
+    displayCartTotal();
+  }
+};
+
+//* Toplam miktarı ekrana basar
 export const displayCartTotal = () => {
   const cartTotalElement = document.querySelector("#cartTotal");
   const total = calculateCartTotal(cart);
