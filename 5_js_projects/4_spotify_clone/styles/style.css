@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+aside {
+  background: #282828;
+  padding: 20px;
+  border-radius: 10px;
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1db954;
+}
+@media (max-width: 992px) {
+  aside figure span {
+    display: none;
+  }
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+aside nav a {
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  aside nav a i {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  aside nav a span {
+    display: none;
+  }
+}
+aside nav a:hover {
+  background: #1db954;
+  color: #121212;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #282828;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+}
+main header form {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+}
+main header form input {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  width: 100%;
+}
+main header form button {
+  padding-right: 10px;
+}
+main header nav {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 650px) {
+  main header nav {
+    display: none;
+  }
+}
+main header nav span {
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+main header nav span:hover {
+  color: white;
+}
+main section {
+  flex: 1;
+}
+main section .list {
+  margin-top: 20px;
+}
+main section .card {
+  background: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main section .card figure img {
+  border-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Poppins";
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+button {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

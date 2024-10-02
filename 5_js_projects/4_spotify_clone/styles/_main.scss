@@ -1,0 +1,85 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $gray;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+
+  // üst kısım
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $black;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+
+    form {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
+      border-radius: 5px;
+      display: flex;
+      width: 100%;
+      max-width: 350px;
+
+      input {
+        background: transparent;
+        outline: none;
+        border: none;
+        padding: 15px;
+        color: $text;
+        width: 100%;
+      }
+      button {
+        padding-right: 10px;
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+
+      @media (max-width: 650px) {
+        display: none;
+      }
+
+      span {
+        font-size: 14px;
+        cursor: pointer;
+        white-space: nowrap;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  // şarkılar
+  section {
+    flex: 1;
+
+    .list {
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #121212;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      figure {
+        img {
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+}
