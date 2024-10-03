@@ -1,8 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.loader {
+  display: grid;
+  place-items: center;
+  height: 80%;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 80px;
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.player-controls {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-info {
+  margin-bottom: 4px;
+}
+
+.song-title {
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+}
+
+.artist {
+  font-size: 12px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #4f4f4f;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 50%;
+  height: 100%;
+  background-color: #1db954;
+  transform-origin: left;
+  animation: progress-animation 10s linear infinite;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn,
+.pause-btn {
+  font-size: 16px;
+  color: #fff;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 aside {
   background: #282828;
   padding: 20px;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  aside {
+    padding: 10px;
+  }
 }
 aside figure {
   display: flex;
@@ -54,11 +155,14 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   background: #282828;
   width: 100%;
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 main header {
   display: flex;
@@ -109,19 +213,58 @@ main section {
 }
 main section .list {
   margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
 }
-main section .card {
+
+.card {
   background: #121212;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
-  cursor: pointer;
   transition: all 0.3s;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 100%;
 }
-main section .card figure img {
+.card .card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover .play {
+  bottom: 20px;
+  opacity: 1;
+}
+.card figure {
+  position: relative;
+}
+.card figure img {
+  width: 100%;
   border-radius: 10px;
+}
+.card figure .play {
+  background: #1db954;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  transition: all 0.3s;
+  font-size: 23px;
+  opacity: 0;
+  cursor: pointer;
+}
+.card figure .play:hover {
+  background: #0f6d32;
+  scale: 1.1;
+  rotate: 360deg;
 }
 
 * {
@@ -138,6 +281,13 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    gap: 10px;
+  }
 }
 
 a {

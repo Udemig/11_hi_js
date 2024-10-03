@@ -2,11 +2,14 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   background: $gray;
   width: 100%;
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   // üst kısım
   header {
@@ -63,22 +66,63 @@ main {
 
     .list {
       margin-top: 20px;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+  }
+}
+
+.card {
+  background: #121212;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+
+  .card-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &:hover .play {
+    bottom: 20px;
+    opacity: 1;
+  }
+
+  figure {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
     }
 
-    .card {
-      background: #121212;
-      padding: 20px;
-      border-radius: 10px;
-      cursor: pointer;
+    .play {
+      background: $green;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      position: absolute;
+      right: 10px;
+      bottom: -20px;
       transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      font-size: 23px;
+      opacity: 0;
+      cursor: pointer;
 
-      figure {
-        img {
-          border-radius: 10px;
-        }
+      &:hover {
+        background: #0f6d32;
+        scale: 1.1;
+        rotate: 360deg;
       }
     }
   }

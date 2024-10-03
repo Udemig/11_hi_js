@@ -2,6 +2,7 @@
 
 @import "variables";
 @import "responsive";
+@import "loader";
 @import "aside";
 @import "main";
 @import "playing";
@@ -20,6 +21,12 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
+  overflow: hidden;
+
+  @include md {
+    padding: 10px;
+    gap: 10px;
+  }
 }
 
 // genel düzeltme
