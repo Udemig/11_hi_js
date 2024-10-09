@@ -26,63 +26,64 @@
     <title>Spotify</title>
   </head>
   <body>
-    <!-- aside -->
-    <aside>
-      <figure>
-        <img src="/images/no-text-logo.png" />
-        <span>Spotify</span>
-      </figure>
-
-      <nav>
-        <a href="/">
-          <i class="bi bi-house"></i>
-          <span>Anasayfa</span>
-        </a>
-        <a href="#">
-          <i class="bi bi-search"></i>
-          <span>Arama</span>
-        </a>
-        <a href="#">
-          <i class="bi bi-collection"></i>
-          <span>Kütüphane</span>
-        </a>
-        <a href="#">
-          <i class="bi bi-music-note-list"></i>
-          <span>Çalma Listeleri</span>
-        </a>
-        <a href="#">
-          <i class="bi bi-heart"></i>
-          <span>Beğenilen Şarkılar</span>
-        </a>
-      </nav>
-    </aside>
-
-    <!-- main -->
-    <main>
-      <!-- header -->
-      <header>
-        <form>
-          <input type="text" placeholder="müzik arayın..." />
-
-          <button>
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
+    <div class="layout">
+      <!-- aside -->
+      <aside>
+        <figure>
+          <img src="/images/no-text-logo.png" />
+          <span>Spotify</span>
+        </figure>
 
         <nav>
-          <span>Premium</span>
-          <span>Destek</span>
-          <span>Oturum Aç</span>
+          <a href="/">
+            <i class="bi bi-house"></i>
+            <span>Anasayfa</span>
+          </a>
+          <a href="#">
+            <i class="bi bi-search"></i>
+            <span>Arama</span>
+          </a>
+          <a href="#">
+            <i class="bi bi-collection"></i>
+            <span>Kütüphane</span>
+          </a>
+          <a href="#">
+            <i class="bi bi-music-note-list"></i>
+            <span>Çalma Listeleri</span>
+          </a>
+          <a href="#">
+            <i class="bi bi-heart"></i>
+            <span>Beğenilen Şarkılar</span>
+          </a>
         </nav>
-      </header>
+      </aside>
 
-      <!-- şarkılar alanı -->
-      <section>
-        <h2 id="title">Popüler Müzikler</h2>
+      <!-- main -->
+      <main>
+        <!-- header -->
+        <header>
+          <form>
+            <input type="text" placeholder="müzik arayın..." />
 
-        <div class="list">
-          <!-- kart -->
-          <!-- <div class="card">
+            <button>
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+
+          <nav>
+            <span>Premium</span>
+            <span>Destek</span>
+            <span>Oturum Aç</span>
+          </nav>
+        </header>
+
+        <!-- şarkılar alanı -->
+        <section>
+          <h2 id="title">Popüler Müzikler</h2>
+
+          <div class="list">
+            <!-- kart -->
+            <!-- <div class="card">
             
             <figure>
               <img
@@ -96,9 +97,39 @@
             <h4>Ellie Goulding</h4>
             <h4>My Blood...</h4>
           </div> -->
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- player  -->
+    <div class="player">
+      <!-- şarkı bilgileri -->
+      <div class="info">
+        <img
+          src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/f1/95/04/f1950424-2ae5-55ff-580d-d52e8300ec1b/dj.iedkotfi.jpg/400x400cc.jpg"
+        />
+
+        <div>
+          <h5>Şımarık</h5>
+          <p>Tarkan</p>
         </div>
-      </section>
-    </main>
+      </div>
+
+      <!-- oyantıcı -->
+      <audio controls>
+        <source
+          src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6c/7d/69/6c7d699a-535b-11d0-3df3-437a529d1bf9/mzaf_10555292832579044244.plus.aac.ep.m4a"
+        />
+      </audio>
+
+      <!-- ikonlar -->
+      <div class="icons">
+        <i class="bi bi-music-note-list"></i>
+        <i class="bi bi-boombox-fill"></i>
+        <i class="bi bi-pc-display"></i>
+      </div>
+    </div>
 
     <script src="./scripts/main.js" type="module"></script>
   </body>

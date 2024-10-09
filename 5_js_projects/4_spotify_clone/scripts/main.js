@@ -47,3 +47,18 @@ ui.form.addEventListener("submit", (e) => {
       alert("Üzgünüz bir sorun oluştu");
     });
 });
+
+// liste alanındaki tıklama olaylarını izle ve
+ui.list.addEventListener("click", (e) => {
+  // eğer oynat butonuna tıklanırsa o şarkıyı oynat
+  if (e.target.className === "play") {
+    // oynatılacak şarkının kardına eriş
+    const card = e.target.closest(".card");
+
+    // oynatılacak şarkının bilgilerini al
+    const data = card.dataset;
+
+    // player alanını tekrar renderla
+    ui.renderPlayer(data);
+  }
+});

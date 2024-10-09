@@ -100,9 +100,9 @@ aside {
   padding: 20px;
   border-radius: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   aside {
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 aside figure {
@@ -177,8 +177,13 @@ main header form {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
   border-radius: 5px;
   display: flex;
-  width: 100%;
   max-width: 350px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  main header form {
+    max-width: none;
+  }
 }
 main header form input {
   background: transparent;
@@ -211,12 +216,22 @@ main header nav span:hover {
 main section {
   flex: 1;
 }
+@media (max-width: 576px) {
+  main section h2 {
+    font-size: 17px;
+  }
+}
 main section .list {
   margin-top: 20px;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+}
+@media (max-width: 768px) {
+  main section .list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 
 .card {
@@ -238,6 +253,9 @@ main section .list {
 .card:hover .play {
   bottom: 20px;
   opacity: 1;
+}
+.card:hover .play i {
+  pointer-events: none;
 }
 .card figure {
   position: relative;
@@ -267,6 +285,54 @@ main section .list {
   rotate: 360deg;
 }
 
+.player {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player .info {
+  display: flex;
+  gap: 10px;
+}
+.player .info div h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.player .info div p {
+  color: rgb(150, 150, 150);
+}
+.player .info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player audio {
+  width: 40%;
+}
+.player .icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
+.animate {
+  animation: turn 4s infinite linear;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -278,14 +344,21 @@ body {
   color: rgba(255, 255, 255, 0.78);
   font-family: "Poppins";
   height: 100vh;
-  display: flex;
-  gap: 20px;
   padding: 20px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
   body {
     padding: 10px;
+  }
+}
+body .layout {
+  height: calc(100vh - 120px);
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  body .layout {
     gap: 10px;
   }
 }

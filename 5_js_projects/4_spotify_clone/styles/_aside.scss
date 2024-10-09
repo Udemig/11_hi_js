@@ -3,8 +3,8 @@ aside {
   padding: 20px;
   border-radius: 10px;
 
-  @include md {
-    padding: 10px;
+  @include xl {
+    padding: 20px 10px;
   }
 
   figure {
