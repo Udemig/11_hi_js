@@ -27,11 +27,49 @@ aside {
   border-radius: 10px;
   color: #fff;
   overflow: hidden;
+  transition: all 0.5s;
+}
+
+/* gizli mod */
+.hide {
+  height: 90px !important;
+}
+
+.hide .head {
+  margin-bottom: 20px;
+}
+
+.hide #arrow {
+  rotate: 180deg;
+}
+
+.hide ul,
+.hide form {
+  display: none !important;
+}
+
+/* form modu */
+
+.add {
+  height: 390px;
+}
+
+.add form {
+  display: flex;
+}
+
+.add #add-title {
+  display: block;
+}
+
+.add ul,
+.add h1 {
+  display: none;
 }
 
 @media (min-width: 768px) {
   aside {
-    height: 70vh;
+    height: 93vh;
   }
 }
 
@@ -39,15 +77,32 @@ aside:hover {
   background: rgba(53, 53, 53, 1);
 }
 
-aside h1 {
+aside .head {
   font-family: "Indie Flower", cursive;
   text-align: center;
-  font-size: 25px;
   background: rgba(53, 53, 53);
   border-radius: 10px;
   letter-spacing: 3px;
   padding: 5px;
   margin: 20px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+aside .head #arrow {
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+aside .head #arrow:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+
+aside .head h1 {
+  flex: 1;
+  font-size: 25px;
 }
 
 /* liste alanı */
@@ -154,17 +209,4 @@ form .buttons button:hover {
 
 form .buttons button:first-child {
   background: #727171;
-}
-
-.add form {
-  display: flex;
-}
-
-.add #add-title {
-  display: block;
-}
-
-.add ul,
-.add h1 {
-  display: none;
 }

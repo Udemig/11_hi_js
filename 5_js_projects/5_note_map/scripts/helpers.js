@@ -21,3 +21,23 @@ function getIcon(status) {
 }
 
 export default getIcon;
+
+// status değerinin türkçe karşılığını return eden fonk
+export function getStatus(status) {
+  switch (status) {
+    case "goto":
+      return "Ziyaret";
+
+    case "home":
+      return "Ev";
+
+    case "job":
+      return "İş";
+
+    case "park":
+      return "Park";
+
+    default:
+      return "Önemsiz";
+  }
+}
