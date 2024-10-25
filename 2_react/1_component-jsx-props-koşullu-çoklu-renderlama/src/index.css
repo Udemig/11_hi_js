@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #242424;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 30px;
+
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid gray;
+  margin-top: 30px;
+}
+
+.alert {
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 15px 10px;
+  background: rgb(0, 89, 255);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.565);
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.basari {
+  background: rgb(51, 128, 0);
+}
+
+.hata {
+  background: red;
+}
+
+.uyari {
+  background: rgb(255, 204, 0);
+}
+
+.wrapper {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  width: 350px;
+  padding: 15px;
+  color: black;
+  box-shadow: 10px 20px 10px rgba(255, 255, 255, 0.072);
+
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  h4 {
+    margin-top: 5px;
+    color: gray;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    button {
+      margin-top: 10px;
+      background: rgb(0, 183, 255);
+      color: white;
+      padding: 10px 20px;
+    }
+  }
+}
