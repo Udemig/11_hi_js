@@ -5,8 +5,8 @@ const Accordion = ({ title, desc }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white text-black rounded-3 p-4 acc">
-      <div className="d-flex justify-content-between align-items-center">
+    <div className="bg-white text-black rounded-3 p-4 acc border shadow">
+      <div className="d-flex justify-content-between align-items-center gap-2">
         <h2>{title}</h2>
 
         <button

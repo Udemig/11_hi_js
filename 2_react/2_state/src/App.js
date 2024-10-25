@@ -1,10 +1,18 @@
 import Counter from "./components/Counter";
 import Accordion from "./components/Accordion";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 const App = () => {
+  const [isLight, setIsLight] = useState(false);
+
   return (
-    <div className="bg-dark text-white vh-100 p-5 d-flex flex-column gap-5">
-      <h1 className="text-center">STATE</h1>
+    <div
+      className={`${
+        isLight ? "bg-white text-dark" : "bg-dark text-white"
+      } vh-100 px-5 d-flex flex-column gap-5`}
+    >
+      <Navbar setIsLight={setIsLight} />
 
       <Counter />
 
