@@ -1,31 +1,76 @@
 {
-  "posts": [
+  "contact": [
     {
-      "id": "2",
-      "title": "another title",
-      "views": 200
+      "id": "sdf345",
+      "name": "Ali Kaya",
+      "position": "Marketing Manager",
+      "company": "Highspeed Studios",
+      "phone": "+90 555 666 77 88",
+      "email": "alikaya@gmail.com"
     },
     {
-      "id": "5082",
-      "title": "axios öğren",
-      "views": 1002
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": null
+      "id": "abc123",
+      "name": "Ayşe Yıldız",
+      "position": "Software Engineer",
+      "company": "TechHub",
+      "phone": "+90 555 123 45 67",
+      "email": "ayseyildiz@techhub.com"
     },
     {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": null
-    }
-  ],
-  "users": [
+      "id": "xyz789",
+      "name": "Mehmet Demir",
+      "position": "Product Designer",
+      "company": "Creative Minds",
+      "phone": "+90 555 789 10 11",
+      "email": "mehmetdemir@mail.com"
+    },
     {
-      "name": "furkan"
+      "id": "lmn456",
+      "name": "Elif Çelik",
+      "position": "Data Scientist",
+      "company": "DataWorks",
+      "phone": "+90 555 444 55 66",
+      "email": "elifcelik@dataworks.com"
+    },
+    {
+      "id": "ghi012",
+      "name": "Can Özkan",
+      "position": "HR Specialist",
+      "company": "HumanEdge",
+      "phone": "+90 555 333 22 11",
+      "email": "canozkan@humanedge.com"
+    },
+    {
+      "id": "bcd678",
+      "name": "Selin Aksoy",
+      "position": "Operations Director",
+      "company": "GlobalConnect",
+      "phone": "+90 533 555 88 99",
+      "email": "selinaksoy@mail.com"
+    },
+    {
+      "id": "efg910",
+      "name": "Orhan Ünlü",
+      "position": "Cybersecurity Analyst",
+      "company": "SecureNet",
+      "phone": "+90 531 222 33 44",
+      "email": "orhanunlu@securenet.com"
+    },
+    {
+      "id": "hij112",
+      "name": "Ezgi Koç",
+      "position": "UX Researcher",
+      "company": "UserFirst",
+      "phone": "+90 536 111 22 33",
+      "email": "ezgikoc@userfirst.com"
+    },
+    {
+      "id": "klm314",
+      "name": "Burak Tuncer",
+      "position": "Project Manager",
+      "company": "Innovatech",
+      "phone": "+90 534 444 55 66",
+      "email": "buraktuncer@mail.com"
     }
   ]
 }

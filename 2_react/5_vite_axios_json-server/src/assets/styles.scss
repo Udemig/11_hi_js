@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+@import "variables";
+@import "default";
+
+.app {
+  padding: 10px;
+
+  @media (min-width: 600px) {
+    padding: 20px;
+  }
+
+  @media (min-width: 800px) {
+    padding: 20px 40px;
+  }
+
+  @media (min-width: 1000px) {
+    padding: 20px 60px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    gap: 20px;
+
+    button {
+      background: white;
+      box-shadow: $shadow-2;
+      font-size: 20px;
+      padding: 10px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+    }
+
+    .ns {
+      width: 50px;
+      @media (max-width: 650px) {
+        display: none;
+      }
+    }
+
+    .add {
+      display: flex;
+      gap: 10px;
+      background: $purple;
+      color: white;
+      border-radius: 10px;
+      padding: 10px 20px;
+
+      &:hover {
+        filter: brightness(60%);
+      }
+
+      span {
+        font-size: 17px;
+      }
+    }
+
+    form {
+      box-shadow: $shadow-2;
+      border-radius: 10px;
+      display: flex;
+      background: white;
+
+      button {
+        font-size: 20px;
+        padding: 0px 10px;
+        color: $purple;
+        box-shadow: none;
+      }
+
+      input {
+        @media (min-width: 750px) {
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: grid;
+  margin-top: 50px;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  box-shadow: $shadow-2;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: $shadow-1;
+
+    .bottom div span:nth-of-type(1) {
+      background: $purple;
+      color: white;
+    }
+  }
+
+  h1 {
+    aspect-ratio: 1;
+    width: 18%;
+    min-width: 60px;
+    text-align: center;
+    background: $purple;
+    color: white;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    box-shadow: $shadow-2;
+    margin-bottom: 10px;
+  }
+
+  p:nth-of-type(1) {
+    color: gray;
+  }
+
+  p:nth-of-type(2) {
+    color: $purple;
+    margin-bottom: 20px;
+  }
+
+  .bottom {
+    div {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      span:nth-of-type(1) {
+        background: rgba(128, 0, 128, 0.291);
+        padding: 8px;
+        display: grid;
+        place-items: center;
+        border-radius: 5px;
+        color: $purple;
+        transition: all 0.3s;
+      }
+
+      span:nth-of-type(2) {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.638);
+  inset: 0;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(10px);
+
+  .modal-inner {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 400px;
+    width: 50%;
+    max-width: 700px;
+    min-height: 500px;
+  }
+
+  .modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      border: 1px solid gray;
+      aspect-ratio: 1;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+  }
+}
