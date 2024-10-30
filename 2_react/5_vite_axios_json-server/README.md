@@ -51,6 +51,39 @@ axios
   .then((res) => console.log("axios", res));
 ```
 
+- POST
+
+```js
+fetch("http://localhost:3000/contact", {
+  method: "POST",
+  body: JSON.stringify(newContact),
+});
+```
+
+```js
+axios.post("http://localhost:3000/contact", newContact);
+```
+
+- DELETE
+
+```js
+fetch(`http://localhost:3000/contact/${id}`, { method: "DELETE" });
+```
+
+```js
+axios.delete(`/contact/${id}`);
+```
+
+- PATCH
+
+```js
+
+```
+
+```js
+
+```
+
 # CRUD
 
 ## Create - Read - Update - Delete

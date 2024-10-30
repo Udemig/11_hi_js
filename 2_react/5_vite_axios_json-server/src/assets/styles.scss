@@ -102,6 +102,7 @@ main {
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
+  position: relative;
 
   &:hover {
     box-shadow: $shadow-1;
@@ -157,6 +158,28 @@ main {
       }
     }
   }
+
+  .buttons {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      color: white;
+      aspect-ratio: 1;
+      width: 35px;
+      cursor: pointer;
+
+      &:nth-child(2) {
+        background: rgb(0, 157, 255);
+      }
+      &:nth-child(1) {
+        background: crimson;
+      }
+    }
+  }
 }
 
 .modal {
@@ -166,6 +189,7 @@ main {
   display: grid;
   place-items: center;
   backdrop-filter: blur(10px);
+  box-shadow: $shadow-1;
 
   .modal-inner {
     background: white;
@@ -175,6 +199,10 @@ main {
     width: 50%;
     max-width: 700px;
     min-height: 500px;
+
+    @media (min-width: 600px) {
+      padding: 20px 30px;
+    }
   }
 
   .modal-head {
@@ -188,6 +216,48 @@ main {
       display: grid;
       place-items: center;
       font-size: 20px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      label {
+        font-weight: 600;
+      }
+
+      input {
+        box-shadow: $shadow-2;
+        border-radius: 8px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: end;
+      gap: 10px;
+      margin-top: 20px;
+
+      button {
+        padding: 5px 20px;
+
+        &:nth-of-type(1) {
+          background: rgba(128, 128, 128, 0.58);
+        }
+
+        &:nth-of-type(2) {
+          background: $purple;
+          color: white;
+        }
+      }
     }
   }
 }

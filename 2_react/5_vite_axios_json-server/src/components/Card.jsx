@@ -1,12 +1,24 @@
 import { FaPhone } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
+import { FaTrashAlt } from "react-icons/fa";
+import { RiEdit2Fill } from "react-icons/ri";
 
-const Card = ({ contact }) => {
+const Card = ({ contact, handleDelete, handleEdit }) => {
   // isim ve soyisimi ayrı değişkenlere atıyoruz
   const [name, surname] = contact.name.split(" ");
 
   return (
     <div className="card">
+      <div className="buttons">
+        <button onClick={() => handleDelete(contact.id)}>
+          <FaTrashAlt />
+        </button>
+
+        <button onClick={() => handleEdit(contact)}>
+          <RiEdit2Fill />
+        </button>
+      </div>
+
       <h1>
         {name[0]} {surname[0]}
       </h1>
