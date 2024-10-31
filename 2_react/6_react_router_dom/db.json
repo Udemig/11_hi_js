@@ -1,0 +1,114 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Suç ve Ceza",
+      "author": "Dostoyevski",
+      "image": "https://picsum.photos/900",
+      "year": 1866,
+      "page": 500,
+      "description": "İnsan doğasını, ahlakını inceleyen bir eserdir.",
+      "price": 600,
+      "category": "roman"
+    },
+    {
+      "id": 2,
+      "title": "Sefiller",
+      "author": "Victor Hugo",
+      "image": "https://picsum.photos/901",
+      "year": 1862,
+      "page": 1232,
+      "description": "Toplumsal adaleti sorgulayan bir başyapıt.",
+      "price": 750,
+      "category": "roman"
+    },
+    {
+      "id": 3,
+      "title": "Beyaz Zambaklar Ülkesinde",
+      "author": "Grigory Petrov",
+      "image": "https://picsum.photos/902",
+      "year": 1923,
+      "page": 200,
+      "description": "Bir milletin kalkınma mücadelesini anlatan eser.",
+      "price": 450,
+      "category": "roman"
+    },
+    {
+      "id": 4,
+      "title": "Anna Karenina",
+      "author": "Lev Tolstoy",
+      "image": "https://picsum.photos/903",
+      "year": 1877,
+      "page": 864,
+      "description": "Aşk, ihanet ve toplumsal normlar üzerine bir roman.",
+      "price": 800,
+      "category": "roman"
+    },
+    {
+      "id": 5,
+      "title": "Yeraltından Notlar",
+      "author": "Dostoyevski",
+      "image": "https://picsum.photos/904",
+      "year": 1864,
+      "page": 160,
+      "description": "Bireyin iç dünyasını irdeleyen derin bir roman.",
+      "price": 400,
+      "category": "roman"
+    },
+    {
+      "id": 6,
+      "title": "Brief Answers to the Big Questions",
+      "author": "Stephen Hawking",
+      "image": "https://picsum.photos/905",
+      "year": 2018,
+      "page": 256,
+      "description": "Evrenin sırları üzerine bilimsel bir inceleme.",
+      "price": 500,
+      "category": "bilim"
+    },
+    {
+      "id": 7,
+      "title": "Sapiens: İnsan Türünün Kısa Bir Tarihi",
+      "author": "Yuval Noah Harari",
+      "image": "https://picsum.photos/906",
+      "year": 2011,
+      "page": 412,
+      "description": "İnsanlık tarihine dair kapsamlı bir inceleme.",
+      "price": 600,
+      "category": "tarih"
+    },
+    {
+      "id": 8,
+      "title": "Zamanın Kısa Tarihi",
+      "author": "Stephen Hawking",
+      "image": "https://picsum.photos/907",
+      "year": 1988,
+      "page": 256,
+      "description": "Zaman ve evrenin doğasına dair popüler bir bilim kitabı.",
+      "price": 450,
+      "category": "bilim"
+    },
+    {
+      "id": 9,
+      "title": "İçimizdeki Şeytan",
+      "author": "Sabahattin Ali",
+      "image": "https://picsum.photos/908",
+      "year": 1940,
+      "page": 288,
+      "description": "Bireyin iç çatışmalarını konu alan bir roman.",
+      "price": 350,
+      "category": "roman"
+    },
+    {
+      "id": 10,
+      "title": "Şu Çılgın Türkler",
+      "author": "Turgut Özakman",
+      "image": "https://picsum.photos/909",
+      "year": 2005,
+      "page": 752,
+      "description": "Türk Kurtuluş Savaşı'nın destansı hikayesi.",
+      "price": 550,
+      "category": "tarih"
+    }
+  ]
+}
