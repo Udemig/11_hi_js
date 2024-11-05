@@ -1,18 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Detail = () => {
   const [book, setBook] = useState(null);
+
+  // Link elementinin görevini yapan yani kullanıcyı istediğimiz sayfaya yönlenerimeye yarayan bir fonksiyon
+  const navigate = useNavigate();
 
   // urldeki id parametresini al
   const { id } = useParams();
 
   // api'dan kitabın bilgilerini al
   useEffect(() => {
+    // api isteği at
     axios
       .get(`http://localhost:3060/books/${id}`)
-      .then((res) => setBook(res.data));
+      // başarılı olursa
+      .then((res) => setBook(res.data))
+      // hata olursa
+      // undefined sayfasına yönlendir
+      // hata kodu verisini yönlendirirken aktar
+      .catch((err) => navigate("/undefined", { state: err.status }));
   }, []);
 
   // araüyüzü kitap bilgileriyle güncelle

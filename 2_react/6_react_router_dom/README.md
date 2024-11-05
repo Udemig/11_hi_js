@@ -34,10 +34,25 @@
 
 # useSearchParams
 
-# useSearchParams
-
-# Nested Routes
+- queryParams'ı yani aramaParametrelerine eirşmeeye veya güncellemeyi sağlayan hook
 
 # useNavigate
 
+- Link elementinin fonksiyon verisiyonu.
+- Fonksiyon içeirisnde kullanıcıyı yönlendirmek için kullanırız.
+
 # useLocation
+
+- url ile alakalı bazı bilgiler erişmemizi sağlar
+- parametreler / mevcut yol / hash / state
+
+# Nested Routes
+
+- İç içe gçmiş yollar, bu özellik alt bileşnlerin ana bilşenin bir parçası olarak yüklenmesine imkan tanır.
+
+- Neden Nester Routes
+
+1. Sadece bir kaç sayfaya özel ortak bir eleman (sidebar header hero) tanımlamak için kullanılabilir.
+
+2. Kullanıcı yetkilendirmesi içinde nested routes'u kullanırız.
+   Örneği adminin erişebilecğei sayfaları bir kapsayıroute içerisine, premium kullanıncın erişebilceği sayfları farklı bir kpasyaıcı route içerisine alıp gerekli koşulları yazdığımız zaman kullanıcı tolüne göre yetkilendirme işini nested routes özelliği sayesinde salayabiliriz.
