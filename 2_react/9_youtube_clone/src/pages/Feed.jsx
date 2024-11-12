@@ -1,8 +1,10 @@
-import { useSearchParams } from "react-router-dom";
-import Card from "../components/Card";
-import Sidebar from "../components/Sidebar";
-import { useEffect, useState } from "react";
-import api from "../api/index";
+import { useSearchParams } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
+import { useEffect, useState } from 'react';
+import api from '../api/index';
+import Loader from '../components/Loader';
+import Error from '../components/Error';
+import Card from '../components/Card';
 
 const Feed = () => {
   const [videos, setVideos] = useState(null);
@@ -10,13 +12,13 @@ const Feed = () => {
   const [error, setError] = useState(null);
 
   const [searchParams] = useSearchParams();
-  const selectedCat = searchParams.get("category");
+  const selectedCat = searchParams.get('category');
 
   useEffect(() => {
     const url = !selectedCat
-      ? "/sdgfdgfdsgshg"
-      : selectedCat === "trending"
-      ? "/trending"
+      ? '/home'
+      : selectedCat === 'trending'
+      ? '/trending'
       : `/search?query=${selectedCat}`;
 
     // yükleniyor state'ini güncelle
@@ -29,17 +31,20 @@ const Feed = () => {
       .finally(() => setIsLoading(false));
   }, [selectedCat]);
 
-  // State'de tutulan verileri kullanarka render işlemleri yap
-
   return (
     <div className="flex">
       <Sidebar selectedCat={selectedCat} />
 
-      <div>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <div className="videos">
+        {isLoading ? (
+          <Loader />
+        ) : error ? (
+          <Error />
+        ) : (
+          videos.map(
+            (i) => i.type === 'video' && <Card key={i.videoId} video={i} />
+          )
+        )}
       </div>
     </div>
   );

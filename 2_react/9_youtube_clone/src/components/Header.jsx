@@ -1,13 +1,13 @@
-import { IoIosSearch } from "react-icons/io";
-import { FaBell } from "react-icons/fa";
-import { IoVideocam } from "react-icons/io5";
-import { MdVideoLibrary } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { IoIosSearch } from 'react-icons/io';
+import { FaBell } from 'react-icons/fa';
+import { IoVideocam } from 'react-icons/io5';
+import { MdVideoLibrary } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className="flex justify-between items-center px-2 py-4 sm:px-4">
-      <Link to={"/?v=Anasayfa"} className="flex items-center gap-2">
+      <Link to={'/'} className="flex items-center gap-2">
         <img className="w-10 sm:w-12" src="/youtube.png" />
         <h1 className="text-xl sm:text-2xl font-mono">Youtube</h1>
       </Link>

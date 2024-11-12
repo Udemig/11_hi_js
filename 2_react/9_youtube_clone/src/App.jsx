@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
-import Feed from "./pages/Feed";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Feed from './pages/Feed';
+import Detail from './pages/Detail';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Feed />} />
+        <Route path="/watch" element={<Detail />} />
         <Route path="/search" element={<h1>SEARCH</h1>} />
       </Routes>
     </BrowserRouter>

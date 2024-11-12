@@ -1,8 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: black;
+  background: #0f0f0f;
   color: white;
+  overflow: hidden;
+}
+
+.videos {
+  width: 100%;
+  height: calc(100vh - 67px);
+  padding: 20px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+}
+
+.videos::-webkit-scrollbar,
+.detail-page::-webkit-scrollbar {
+  background: black;
+  width: 10px;
+}
+
+.videos::-webkit-scrollbar-thumb,
+.detail-page::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 4px;
+}
+
+/* detay sayfası */
+
+.detail-page {
+  overflow-y: auto;
+}
+
+.page-content {
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto 400px;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+@media (max-width: 1200px) {
+  .page-content {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
 }
