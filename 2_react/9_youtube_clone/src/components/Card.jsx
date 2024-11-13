@@ -1,8 +1,8 @@
-import millify from 'millify';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import millify from "millify";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({ video }) => {
+const Card = ({ video, isRow }) => {
   const [isHover, setIsHover] = useState(false);
 
   // kapak fotoğrafı
@@ -16,6 +16,7 @@ const Card = ({ video }) => {
 
   return (
     <Link
+      className={isRow ? "row" : "col"}
       to={`/watch?v=${video.videoId}`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -26,18 +27,18 @@ const Card = ({ video }) => {
       </div>
 
       {/* alt detay alanı */}
-      <div className="mt-5 flex gap-4">
-        <img className="size-14 rounded-full" src={channelPic} />
+      <div className="flex gap-4">
+        <img className="size-14 rounded-full pp" src={channelPic} />
 
         <div>
           <h4 className="font-bold line-clamp-2">{video.title}</h4>
 
           <p>{video.channelTitle}</p>
 
-          <div className="flex gap-3 items-center mt-1">
+          <div className="flex gap-3 items-center">
             <p>
               <span>{millify(video.viewCount)}</span>
-              <span className="text-sm ms-1">Görüntülenme</span>
+              <span className="text-sm ms-1 views">Görüntülenme</span>
             </p>
             *
             {video.isLive ? (

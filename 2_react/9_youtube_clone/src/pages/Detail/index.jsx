@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import api from '../../api';
-import ReactPlayer from 'react-player';
-import Channel from './Channel';
-import Description from './Description';
-import Comments from './Comments';
-import { BasicLoader } from '../../components/Loader';
-import Error from '../../components/Error';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import api from "../../api";
+import ReactPlayer from "react-player";
+import Channel from "./Channel";
+import Description from "./Description";
+import Comments from "./Comments";
+import { BasicLoader } from "../../components/Loader";
+import Error from "../../components/Error";
+import Card from "../../components/Card";
 
 const Detail = () => {
   const [video, setVideo] = useState(null);
@@ -16,7 +17,7 @@ const Detail = () => {
   const [searchParams] = useSearchParams();
 
   // url'deki "v" isimli parametreye eriş
-  const id = searchParams.get('v');
+  const id = searchParams.get("v");
 
   // id'si bilinen videonun bilgilerini api'dan al
   useEffect(() => {
@@ -28,6 +29,8 @@ const Detail = () => {
       .catch((err) => setError(err.message));
   }, [id]);
 
+  console.log(video);
+
   return (
     <div className="detail-page h-screen overflow-auto ">
       <div className="page-content">
@@ -37,8 +40,8 @@ const Detail = () => {
           <div className="h-[30vh] md:h-[50vh] lg:h-[60vh] rounded overflow-hidden">
             <ReactPlayer
               //   playing={true}
-              height={'100%'}
-              width={'100%'}
+              height={"100%"}
+              width={"100%"}
               controls
               url={`https://www.youtube.com/watch?v=${id}`}
             />
@@ -46,7 +49,7 @@ const Detail = () => {
 
           {/* açıklamalar */}
           {error ? (
-            <Error />
+            <Error info={error} />
           ) : !video ? (
             <BasicLoader />
           ) : (
@@ -64,8 +67,11 @@ const Detail = () => {
         </div>
 
         {/*TODO önerilen videolar */}
-        <div>
-          <h1 className="text-2xl font-bold">Önerilen Videolar</h1>
+        <div className="flex flex-col gap-5 p-1">
+          {video?.relatedVideos.data.map(
+            (item) =>
+              item.type === "video" && <Card key={item.videoId} video={item} isRow />
+          )}
         </div>
       </div>
     </div>

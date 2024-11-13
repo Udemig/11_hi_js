@@ -1,5 +1,29 @@
+import { FaUserCircle } from "react-icons/fa";
+
 const SkeletonLoader = () => {
-  return <div>Loader</div>;
+  // 20 elemana sahip bir diiz oluştur
+  const arr = new Array(20).fill("selam");
+
+  // ekrana 20 tane card iskeleti bas
+  return arr.map((i, key) => (
+    <div key={key} className="animate-pulse">
+      <div className="bg-gray-600 h-[220px] md:h-48 mb-4 rounded" />
+
+      <div className="flex items-center gap-3">
+        <FaUserCircle className="text-5xl text-gray-600" />
+
+        <div>
+          <div className="h-2.5 bg-gray-600 w-44 rounded-full" />
+          <div className="h-2.5 bg-gray-600 w-16 rounded-full my-4" />
+
+          <div className="flex gap-2">
+            <div className="h-2 bg-gray-600 w-28 rounded-full" />
+            <div className="h-2 bg-gray-600 w-28 rounded-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  ));
 };
 
 export default SkeletonLoader;

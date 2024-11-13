@@ -1,10 +1,10 @@
-import { useSearchParams } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import { useEffect, useState } from 'react';
-import api from '../api/index';
-import Loader from '../components/Loader';
-import Error from '../components/Error';
-import Card from '../components/Card';
+import { useSearchParams } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import { useEffect, useState } from "react";
+import api from "../api/index";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
+import Card from "../components/Card";
 
 const Feed = () => {
   const [videos, setVideos] = useState(null);
@@ -12,13 +12,13 @@ const Feed = () => {
   const [error, setError] = useState(null);
 
   const [searchParams] = useSearchParams();
-  const selectedCat = searchParams.get('category');
+  const selectedCat = searchParams.get("category");
 
   useEffect(() => {
     const url = !selectedCat
-      ? '/home'
-      : selectedCat === 'trending'
-      ? '/trending'
+      ? "/home"
+      : selectedCat === "trending"
+      ? "/trending"
       : `/search?query=${selectedCat}`;
 
     // yükleniyor state'ini güncelle
@@ -39,11 +39,9 @@ const Feed = () => {
         {isLoading ? (
           <Loader />
         ) : error ? (
-          <Error />
+          <Error info={error} />
         ) : (
-          videos.map(
-            (i) => i.type === 'video' && <Card key={i.videoId} video={i} />
-          )
+          videos.map((i) => i.type === "video" && <Card key={i.videoId} video={i} />)
         )}
       </div>
     </div>
