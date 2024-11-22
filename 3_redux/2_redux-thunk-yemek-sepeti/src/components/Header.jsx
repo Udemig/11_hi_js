@@ -1,18 +1,21 @@
-import { BsBasket } from "react-icons/bs";
-import { IoRestaurant } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { BsBasket } from 'react-icons/bs';
+import { IoRestaurant } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const { restaurants } = useSelector(
-    (store) => store.restaurantReducer
-  );
+  const { restaurants } = useSelector((store) => store.restaurantReducer);
+
+  const { cart } = useSelector((store) => store.cartReducer);
+
+  // sepetteki toplam ürün adedi
+  const totalAmount = cart.reduce((total, i) => total + i.amount, 0);
 
   return (
     <div className="shadow">
       <div className="container flex justify-between items-center">
         <Link
-          to={"/"}
+          to={'/'}
           className="text-red-500 font-[900] text-2xl font-mono md:text-3xl"
         >
           ThunkSepeti
@@ -36,7 +39,7 @@ const Header = () => {
             className="flex items-center gap-2 py-2 px-3 hover:bg-red-100 rounded-full"
           >
             <BsBasket />
-            <span>3</span>
+            <span>{totalAmount}</span>
           </Link>
         </div>
       </div>

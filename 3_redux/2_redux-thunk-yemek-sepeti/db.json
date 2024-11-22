@@ -273,13 +273,13 @@
     },
     {
       "id": "42",
-      "title": "Margarita Pizza",
+      "title": "Adana Kebap",
       "desc": "İnce hamur üzerine taze mozzarella peyniri, domates sosu ve fesleğen ile yapılan klasik pizza.",
       "category": "Pizza",
       "price": 12.99,
       "rating": 4.5,
       "photo": "https://picsum.photos/211",
-      "restaurantId": "2",
+      "restaurantId": "1",
       "isPopular": true
     },
     {
@@ -446,28 +446,31 @@
   ],
   "cart": [
     {
-      "id": "5c971fd6-de46-4ff1-a045-3ab97f9a9881",
-      "productId": "29",
+      "id": "6298d833-dd36-4a1d-8bd3-5491050747b2",
+      "productId": "9",
+      "category": "Salatalar",
       "title": "İtalyan Salata",
       "price": 8.49,
-      "photo": "https://picsum.photos/210",
+      "photo": "https://picsum.photos/208",
       "amount": 1
     },
     {
-      "id": "60736dfd-e746-4641-ab4b-7cf239ee2fb5",
-      "productId": "3",
-      "title": "Tavuk Kebabı",
-      "price": 17.99,
-      "photo": "https://picsum.photos/203",
-      "amount": 1
-    },
-    {
-      "id": "5ac9d034-da9c-4b56-a913-f778fffe1b74",
-      "productId": "1",
+      "id": "cdb46435-cdcc-4440-a89e-3f61ca3d492d",
+      "productId": "311",
+      "category": "Deniz Ürünleri",
       "title": "Izgara Somon",
-      "price": 45.99,
-      "photo": "https://picsum.photos/200",
+      "price": 21.99,
+      "photo": "https://picsum.photos/212",
       "amount": 2
+    },
+    {
+      "id": "b226fbe0-0a84-4f20-b812-d27785ec7314",
+      "productId": "12",
+      "category": "Atıştırmalıklar",
+      "title": "Çıtır Tavuk Kanadı",
+      "price": 9.99,
+      "photo": "https://picsum.photos/211",
+      "amount": 6
     }
   ]
 }
