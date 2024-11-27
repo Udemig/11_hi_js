@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../api/index";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loader from "../../components/loader/index";
 import Banner from "./Banner";
 import Content from "./Content";
@@ -33,10 +33,13 @@ const Detail = () => {
   return (
     <div>
       <div className="flex mb-5 justify-between">
-        <button className="bg-gray-600 py-2 px-4 rounded hover:bg-gray-500 transition flex gap-2 items-center">
+        <Link
+          to={-1}
+          className="bg-gray-600 py-2 px-4 rounded hover:bg-gray-500 transition flex gap-2 items-center"
+        >
           <RiArrowLeftSLine className="text-xl" />
           Geri
-        </button>
+        </Link>
 
         <SaveButton movie={movie} />
       </div>
