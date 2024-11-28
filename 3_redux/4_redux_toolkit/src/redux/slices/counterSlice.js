@@ -10,18 +10,28 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const slice = createSlice({
+const counterSlice = createSlice({
   name: "counter",
-  initialState: { count: 1 },
+  initialState: { count: 1, name: "furkan" },
   // hem aksiyonları hemde görevlerini tanımla
   reducers: {
-    increase: (state, action) => {},
-    decrease: (state, action) => {},
+    increase: (state) => {
+      // artık state'i doğrudan güncelleyebiliriz
+      state.count++;
+    },
+
+    decrease: (state) => {
+      state.count--;
+    },
+
+    setCount: (state, action) => {
+      state.count = action.payload;
+    },
   },
 });
 
-console.log(slice);
+// slice'ın oluşturduğu aksiyonlar
+export const { increase, decrease, setCount } = counterSlice.actions;
 
-console.log("1", slice.actions.increase());
-
-export default slice;
+// slice'ın oluşturudğu reducer fonksiyonu
+export default counterSlice.reducer;
