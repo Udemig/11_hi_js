@@ -15,14 +15,25 @@ const taskSlice = createSlice({
     },
 
     deleteTask: (state, action) => {
-      // splice yöntemi
+      // silinecek elemanın sırasını bul
       const i = state.tasks.findIndex((i) => i.id === action.payload);
 
+      // splice ile islme
       state.tasks.splice(i, 1);
+    },
+
+    updateTask: (state, action) => {
+      // güncellenicek elemanın sırasını bul
+      const i = state.tasks.findIndex(
+        (i) => i.id === action.payload.id
+      );
+
+      // splice ile güncelleme
+      state.tasks.splice(i, 1, action.payload);
     },
   },
 });
 
-export const { addTask, deleteTask } = taskSlice.actions;
+export const { addTask, deleteTask, updateTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
