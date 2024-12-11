@@ -1,21 +1,61 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Polyline,
+  Popup,
+  TileLayer,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import { useDispatch, useSelector } from "react-redux";
+import { icon } from "leaflet";
+import "leaflet-rotatedmarker";
+import { clearRoute } from "../redux/slices/detailSlice";
 
-const Map = () => {
+const Map = ({ setDetailId }) => {
+  const { flights } = useSelector((store) => store.flight);
+  const { route } = useSelector((store) => store.detail);
+  const dispatch = useDispatch();
+
+  // custom imleç iconu oluştur
+  const planeIcon = icon({
+    iconUrl: "plane_icon.png",
+    iconSize: [30, 30],
+  });
+
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+    <MapContainer
+      center={[38.922892, 35.411169]}
+      zoom={6}
+      scrollWheelZoom={true}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      <Marker position={[51.505, -0.09]}>
-        <Popup>Selamlar!!!</Popup>
-      </Marker>
+      {flights.map((flight) => (
+        <Marker
+          key={flight.id}
+          position={[flight.lat, flight.lng]}
+          icon={planeIcon}
+          rotationAngle={flight.deg - 45}
+        >
+          <Popup>
+            <div className="popup">
+              <span>Kod: {flight.code}</span>
+              <button onClick={() => setDetailId(flight.id)}>Detay</button>
 
-      <Marker position={[51.56, -0.09]}></Marker>
+              {route.length > 1 && (
+                <button onClick={() => dispatch(clearRoute())}>
+                  Rotayı Temizle
+                </button>
+              )}
+            </div>
+          </Popup>
+        </Marker>
+      ))}
 
-      <Marker position={[51.56, -0.03]}></Marker>
+      {route && <Polyline positions={route} />}
     </MapContainer>
   );
 };
