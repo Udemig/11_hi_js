@@ -10,11 +10,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { icon } from "leaflet";
 import "leaflet-rotatedmarker";
 import { clearRoute } from "../redux/slices/detailSlice";
+import { useEffect } from "react";
+import { getFlights } from "../redux/actions";
 
 const Map = ({ setDetailId }) => {
   const { flights } = useSelector((store) => store.flight);
   const { route } = useSelector((store) => store.detail);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      dispatch(getFlights());
+    }, 2000);
+
+    return () => clearInterval(id);
+  }, []);
 
   // custom imleç iconu oluştur
   const planeIcon = icon({
