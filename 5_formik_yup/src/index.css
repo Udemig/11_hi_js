@@ -61,3 +61,21 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* hata mesajı */
+.feedback {
+  visibility: hidden;
+  color: red;
+  margin-top: 4px;
+}
+
+.is-invalid + .feedback {
+  visibility: visible;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+}
