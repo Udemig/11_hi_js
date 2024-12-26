@@ -6,4 +6,8 @@
   .input {
     @apply text-black rounded mt-1 p-2 outline-none shadow-lg focus:shadow-[gray];
   }
+
+  .form-icon {
+    @apply hover:bg-third/20 rounded-full size-8 grid place-items-center;
+  }
 }
