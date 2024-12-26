@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { db } from "../../firebase/index";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import uploadToStorage from "../../firebase/uploadToStorage";
+import Loader from "../loader";
+import React from "react";
 
 const Form = ({ user }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -128,10 +130,11 @@ const Form = ({ user }) => {
           </div>
 
           <button
+            disabled={isLoading}
             type="submit"
-            className="bg-secondary font-bold px-5 py-[6px] rounded-full text-primary tracking-wide hover:brightness-90"
+            className="bg-secondary font-bold px-5 py-[6px] rounded-full text-primary tracking-wide hover:brightness-90 min-w-[100px]"
           >
-            {isLoading ? "Yükleniyor..." : "Gönder"}
+            {isLoading ? <Loader /> : "Gönder"}
           </button>
         </div>
       </form>
@@ -139,4 +142,4 @@ const Form = ({ user }) => {
   );
 };
 
-export default Form;
+export default React.memo(Form);
