@@ -446,31 +446,49 @@
   ],
   "cart": [
     {
-      "id": "6298d833-dd36-4a1d-8bd3-5491050747b2",
-      "productId": "9",
-      "category": "Salatalar",
-      "title": "İtalyan Salata",
-      "price": 8.49,
-      "photo": "https://picsum.photos/208",
-      "amount": 1
-    },
-    {
-      "id": "cdb46435-cdcc-4440-a89e-3f61ca3d492d",
-      "productId": "311",
-      "category": "Deniz Ürünleri",
-      "title": "Izgara Somon",
-      "price": 21.99,
-      "photo": "https://picsum.photos/212",
-      "amount": 2
-    },
-    {
       "id": "b226fbe0-0a84-4f20-b812-d27785ec7314",
       "productId": "12",
       "category": "Atıştırmalıklar",
       "title": "Çıtır Tavuk Kanadı",
       "price": 9.99,
       "photo": "https://picsum.photos/211",
-      "amount": 6
+      "amount": 5
+    },
+    {
+      "id": "5e81d34e-8047-4e31-b3c3-f13fdecb3439",
+      "productId": "3",
+      "category": "Kebaplar",
+      "title": "Tavuk Kebabı",
+      "price": 17.99,
+      "photo": "https://picsum.photos/203",
+      "amount": 2
+    },
+    {
+      "id": "f234ab37-a32b-4b4a-926b-b54d8495d9d6",
+      "productId": "111",
+      "category": "Salatalar",
+      "title": "Mevsim Salata",
+      "price": 7.99,
+      "photo": "https://picsum.photos/212",
+      "amount": 1
+    },
+    {
+      "id": "7b3d5aaf-d55c-4ecd-931b-dd38d5e79906",
+      "productId": "2",
+      "category": "Pizza",
+      "title": "Margarita Pizza",
+      "price": 12.99,
+      "photo": "https://picsum.photos/201",
+      "amount": 2
+    },
+    {
+      "id": "85df2ba7-3d50-4e57-b8e8-401c8ba1e3a4",
+      "productId": "1",
+      "category": "Deniz Ürünleri",
+      "title": "Izgara Somon",
+      "price": 45.99,
+      "photo": "https://picsum.photos/200",
+      "amount": 4
     }
   ]
 }
