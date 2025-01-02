@@ -21,4 +21,4 @@
 
 - İki çeşit matcher'lar vardır.
 - DOM: https://github.com/testing-library/jest-dom
-- Değikenler: https://jestjs.io/docs/using-matchers
+- Değişkenler: https://jestjs.io/docs/using-matchers

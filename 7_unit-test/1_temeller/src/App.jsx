@@ -1,5 +1,6 @@
 import Button from "./ components/button";
 import Counter from "./ components/counter";
+import Accordion from "./ components/accordion";
 
 const App = () => {
   return (
@@ -15,6 +16,10 @@ const App = () => {
       <br />
 
       <Counter />
+
+      <br />
+
+      <Accordion />
     </div>
   );
 };
