@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex gap-3 items-center">
           <PiVirus className="text-4xl text-pink-600" />
-          <spa className="font-semibold text-xl">Covid-19</spa>
+          <span className="font-semibold text-xl">Covid-19</span>
         </Link>
 
         <nav className="flex gap-4">
