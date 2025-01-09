@@ -4,7 +4,7 @@ export const geoUrl =
 export const exampleCountryDetail = {
   continent: "Asia",
   country: "Turkey",
-  capital: ["Ankara"],
+  capital: "Ankara",
   currency: "Turkish lira",
   day: "07.01.2025",
   cases: "17,9M",

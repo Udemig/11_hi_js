@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ContentLoader from "../../components/loader/content-loader";
-import Error from "../../components/error/index";
+import Error from "../../components/error";
 import Card from "./Card";
+import { getDetails } from "../../redux/actions";
+import { useParams } from "react-router-dom";
 
 const Content = () => {
   const { isLoading, error, data } = useSelector((store) => store);
+  const dispatch = useDispatch();
+  const { code } = useParams();
 
   // data nesnesini diziye çevir
   const arr = Object.entries(data || {}).filter((i) => i[0] !== "flags");
@@ -14,7 +18,7 @@ const Content = () => {
       {isLoading ? (
         <ContentLoader />
       ) : error ? (
-        <Error info={error} />
+        <Error info={error} refetch={() => dispatch(getDetails(code))} />
       ) : (
         arr.map((item, key) => <Card key={key} item={item} />)
       )}

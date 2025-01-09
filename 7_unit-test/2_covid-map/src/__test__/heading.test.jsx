@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { getByTestId, render, screen } from "@testing-library/react";
 import Heading from "../pages/detail/Heading";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -39,7 +39,11 @@ it("store'da yüklenme bittiğinde ekranda loader yoktur", () => {
     </Provider>
   );
 
-  // todo YARIN BAKALIM
+  // ekranda loader id sine sahip eleman varsa al
+  const loader = screen.queryByTestId("heading-loader");
+
+  // ekranda loader yoktur
+  expect(loader).toBeNull();
 });
 
 it("store'a veri geldiğinde ekrana veriler basılır", () => {
