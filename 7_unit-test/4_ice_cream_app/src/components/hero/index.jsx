@@ -3,7 +3,7 @@ import HeroCard from "./hero-card";
 
 const Hero = () => {
   return (
-    <div className="mt-[30px] 2xl:mt-[110px] grid lg:grid-cols-2 gap-[50px]">
+    <div className="mt-[30px] 2xl:mt-[110px] grid lg:grid-cols-2 gap-[50px] lg:mb-[80px]">
       <div>
         <HeroBrand />
       </div>

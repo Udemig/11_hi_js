@@ -36,3 +36,12 @@ export const mockArray = [
     id: "f0c2",
   },
 ];
+
+export const mockItem = {
+  name: "Çikolota",
+  image: "/ice-1.png",
+  price: 35,
+  id: "34d5",
+  type: "cup",
+  amount: 3,
+};
