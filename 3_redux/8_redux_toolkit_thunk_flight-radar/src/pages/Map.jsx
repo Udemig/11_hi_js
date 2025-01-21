@@ -19,11 +19,11 @@ const Map = ({ setDetailId }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const id = setInterval(() => {
-      dispatch(getFlights());
-    }, 2000);
+    // const id = setInterval(() => {
+    dispatch(getFlights());
+    // }, 2000);
 
-    return () => clearInterval(id);
+    // return () => clearInterval(id);
   }, []);
 
   // custom imleç iconu oluştur
