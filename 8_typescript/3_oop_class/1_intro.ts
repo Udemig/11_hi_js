@@ -42,7 +42,6 @@ class OldPhone {
  * Class'larda da durum aynıdır class'ı new anahta kelimesi çağırırız ve bir nesne oluşturur.
  * Class'ın oluşturduğu bu nesneye instance (örnek) denir
  */
-
 const telefon_1 = new OldPhone();
 const telefon_2 = new OldPhone();
 

@@ -93,3 +93,20 @@ class Araba extends Arac {
 const bmw = new Araba("BMW", "M4", "Benzin");
 console.log(bmw);
 bmw.calistir();
+
+// Bir class aynı anda birden fazla farklı miras alamaz
+// Ama miras alma olayı birden fazla kere gerçekleşebilir
+
+class Human {
+  eye_color: string = "";
+}
+
+class Father extends Human {
+  eye_color: string = "Kahverenegi";
+}
+
+class Mother extends Human {
+  eye_color: string = "Mavi";
+}
+
+class Son extends Father {}

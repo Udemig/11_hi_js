@@ -70,6 +70,7 @@ class Tool {
   kind: string;
   brand: string;
   warranty_period: string;
+
   constructor(
     name: string,
     kind: string,
