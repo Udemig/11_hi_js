@@ -14,6 +14,14 @@
   --color-secondary-orange: #f79761;
 }
 
+/* Mevcut elemetnleri stillendirme */
+@layer utilities {
+  body {
+    @apply bg-dark-gray;
+  }
+}
+
+/* Kendi coluşturduğumuz class'ları stillendirme */
 @layer components {
   .max-width {
     @apply max-w-[1440px] mx-auto;
