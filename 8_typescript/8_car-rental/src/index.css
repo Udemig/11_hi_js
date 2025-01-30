@@ -228,3 +228,42 @@
     @apply cursor-default select-none py-2 pl-10 pr-4;
   }
 }
+
+.pagination {
+  display: flex;
+  width: 100%;
+  margin: 50px 0;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
+  gap: 5px;
+}
+
+.pagination li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgb(112, 112, 112);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pagination li:hover {
+  background: rgb(62, 62, 62);
+}
+
+.pagination .selected {
+  background: rgb(3, 90, 229);
+  color: white;
+}
+
+.pagination .previous,
+.pagination next {
+  font-weight: bold;
+}
