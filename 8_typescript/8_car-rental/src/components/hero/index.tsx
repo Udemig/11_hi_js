@@ -24,6 +24,7 @@ const Hero: FC = () => {
           transition={{ duration: 0.5 }}
           src="/hero.png"
           className="object-contain"
+          alt="sol çapraza doğru bakan gri renkte bir bmw"
         />
       </div>
     </div>

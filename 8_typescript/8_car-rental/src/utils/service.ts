@@ -33,14 +33,14 @@ export const fetchCars = async ({
   url.searchParams.append("limit", String(limit));
   url.searchParams.append("offset", String((Number(page) - 1) * limit));
 
-  url.searchParams.append("refine", `make:${make}`);
+  url.searchParams.append("refine", `make:"${make}"`);
 
   if (model) {
-    url.searchParams.append("refine", `model:${model}`);
+    url.searchParams.append("refine", `model:"${model}"`);
   }
 
   if (year) {
-    url.searchParams.append("refine", `year:${year}`);
+    url.searchParams.append("refine", `year:"${year}"`);
   }
 
   const res = await fetch(url.href);

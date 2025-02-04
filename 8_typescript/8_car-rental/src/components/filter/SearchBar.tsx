@@ -39,28 +39,29 @@ const SearchBar: FC = () => {
             placeholder="Marka seçiniz..."
             // varsayılan değeri url'den al
             defaultValue={{
-              label: params.get("make"),
-              value: params.get("make"),
+              label: params.get("make") || "BMW",
+              value: params.get("make") || "BMW",
             }}
             // -! operatörü ile e'in null olmayacığını ts'e söyle
             onChange={(e) => setMake(e!.value as string)}
           />
         </div>
 
-        <button className="ml-3 sm:hidden cursor-pointer">
-          <img src="/search.svg" className="size-[40px]" />
+        <button className="ml-3 sm:hidden cursor-pointer" aria-label="Ara">
+          <img alt="search" src="/search.svg" className="size-[40px]" />
         </button>
       </div>
 
       <div className="searchbar-item flex flex-col !items-start">
-        <label>Model</label>
+        <label htmlFor="model">Model</label>
 
         <div className="flex w-full">
           <div className="absolute ml-3 mt-1">
-            <img src="model-icon.png" className="size-[25px]" />
+            <img alt="search" src="model-icon.png" className="size-[25px]" />
           </div>
 
           <input
+            id="model"
             className="searchbar-input rounded text-black bg-white"
             placeholder="örn:Civic"
             onChange={(e) => setModel(e.target.value)}
@@ -68,8 +69,8 @@ const SearchBar: FC = () => {
             type="text"
           />
 
-          <button className="ml-3 cursor-pointer">
-            <img src="/search.svg" className="size-[40px]" />
+          <button className="ml-3 cursor-pointer" aria-label="Ara">
+            <img alt="search" src="/search.svg" className="size-[40px]" />
           </button>
         </div>
       </div>

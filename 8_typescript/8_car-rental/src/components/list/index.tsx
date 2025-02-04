@@ -16,7 +16,7 @@ const List: FC = () => {
   const paramsObj = Object.fromEntries(params.entries());
 
   useEffect(() => {
-    fetchCars({ ...paramsObj })
+    fetchCars(paramsObj)
       .then((data) => {
         setCars(data.results);
         setTotal(data.total_count);

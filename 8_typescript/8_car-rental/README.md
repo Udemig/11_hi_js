@@ -1,7 +1,7 @@
 # Proje Kaynakları
 
 - Araç verileri için API:
-- https://public.opendatasoft.com/explore/dataset/all-vehicles-model/api/?sort=scharger
+- https://publ1ic.opendatasoft.com/explore/dataset/all-vehicles-model/api/?sort=scharger
 
 - Fotoğraf üretmek için API:
 - https://docs.imagin.studio/guides/getting-images/embedding-in-your-website
@@ -71,3 +71,58 @@ const Form: FC = () => {
   );
 };
 ```
+
+# Proje Yayınlama Adımları
+
+1. Projenizi Hazırlayın
+2. Alan Adı (Domain) && SSL Kirala
+3. Hosting Platformu Seç
+4. Projeyi hosting ile yayınla (deploy etme)
+5. DNS ayarlarını yap
+6. Web sitesini kontrol et
+7. SEO Kontrolü / İyileştirmesi
+
+# Hosting
+
+1. Modern Hosting Çözümleri
+
+- Projeyi github resposu üzerinden tek tıkla yayınlayabiliyoruz.
+- Vercel, Netlify, Cloudflate Pages, Github Pages
+
+* Vercel
+
+- Modern framewrokler için tam uyumlu
+- Ücretsiz planı küçük projeler için ideal
+- Otomatik SSL, CDN, CI/CD (Sürekli Dağıtım)
+
+2. Geleneksel Hosting Çözümleri
+
+- Kendi sunucumuzu kiralayıp her şeyi manuel olarak yapıyoruz.
+
+- VPS (Virtual Private Server): Digital Ocean, Linode, Vultr
+- AWS S3
+- Firebase Hosting
+
+# Alan Adı Domain & SSL
+
+- Web sitesinin kolay hatırlanabilir, güvenli, profosyonel olması için bir alan adı ve ssl sertifikasına ihtiyacı vardır.
+
+- Alan adları ip adresilerini (192.168.1.1) anlamlı hale getiren DNS (Domain Name System) tarafından yönetilir.
+
+- Alan adı nasıl alınır:
+- Namecheap, Google Domains, GoDady, İsim Tescil vb..
+
+# DNS
+
+- Domain name system, alan adlarını ip adresine çeviren bir sistemdir.
+- Kullanıcılar bir websitesine alan adıyla (www.furkanevin.xyz) erişmek istediklerinde, DNS bu alana adını sunucunun IP adersine çevirir. Böylece, kullanıcı siteye erişmek için karmaşık bir ip adresi yazmak yerine daha basit bir alan adı yazar
+
+## DNS Kayıt Türleri
+
+1. A (Adress) Kaydı: Bir alan adının hangi ip adresine yönlenderileceğini belirler
+
+- Örneğin "www.furkanevin.xyz" adersine girildiğinde a kaydının değeri olan ip aderesine (192.168.1.1) yönlendirir
+
+2. NS (Name Server) Kaydı: Alan adının hangi ad sunucuları tarafından yönetilidğini belirtir
+
+3. CNAME (Canonical Name) Kaydı: Bir alan adını başka bir alan adına yönlendirir.
