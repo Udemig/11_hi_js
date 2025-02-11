@@ -25,8 +25,17 @@ const notesSlice = createSlice({
       const newNote: Note = { ...action.payload, id: v4() };
       state.notes.push(newNote);
     },
-    updateNote: () => {},
-    deleteNote: () => {},
+
+    deleteNote: (state, action: PayloadAction<string>) => {
+      const i = state.notes.findIndex((n) => n.id === action.payload);
+      state.notes.splice(i, 1);
+    },
+
+    updateNote: (state, action: PayloadAction<Note>) => {
+      const i = state.notes.findIndex((n) => n.id === action.payload.id);
+
+      state.notes.splice(i, 1, action.payload);
+    },
   },
 });
 

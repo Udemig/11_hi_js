@@ -1,11 +1,4 @@
-import {
-  Autocomplete,
-  Box,
-  Button,
-  Chip,
-  Stack,
-  TextField,
-} from "@mui/material";
+import { Autocomplete, Box, Button, Chip, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -32,6 +25,12 @@ const TagSelect = ({ selectedTags, handleAddTag, handleDeleteTag }: Props) => {
             handleAddTag(tag as string);
             setNewTag(null);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAddTag(newTag as string);
+              setNewTag(null);
+            }
+          }}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -54,20 +53,9 @@ const TagSelect = ({ selectedTags, handleAddTag, handleDeleteTag }: Props) => {
         </Button>
       </Stack>
 
-      <Box
-        position="absolute"
-        display="flex"
-        flexWrap="wrap"
-        gap={1}
-        marginTop={2}
-      >
+      <Box position="absolute" display="flex" flexWrap="wrap" gap={1} marginTop={2}>
         {selectedTags.map((tag, key) => (
-          <Chip
-            key={key}
-            label={tag}
-            onDelete={() => handleDeleteTag(tag)}
-            color={tag === newTag ? "primary" : "default"}
-          />
+          <Chip key={key} label={tag} onDelete={() => handleDeleteTag(tag)} color={tag === newTag ? "primary" : "default"} />
         ))}
       </Box>
     </>
