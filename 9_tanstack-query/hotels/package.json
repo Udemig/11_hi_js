@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
+    "@tanstack/react-query-devtools": "^5.66.0",
+    "formik": "^2.4.6"
+  }
+}

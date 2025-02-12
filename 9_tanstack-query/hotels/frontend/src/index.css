@@ -8,4 +8,20 @@
   .hero {
     background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(43, 85, 255, 0.5)), url("/bg.jpg");
   }
+
+  .field {
+    @apply flex flex-col gap-2;
+  }
+
+  .input {
+    @apply border border-zinc-200 py-1 px-4 rounded-md shadow-sm;
+  }
+
+  .check-field {
+    @apply flex justify-between items-center;
+  }
+
+  .checkbox {
+    @apply size-5 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+  }
 }

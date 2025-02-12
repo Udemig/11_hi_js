@@ -6,7 +6,9 @@ const Hero: FC = () => {
       <div className="text-white text-center">
         <h1 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5">Tripster ile konaklama rezervasyonu yap</h1>
 
-        <p className="md:text-lg lg:text-xl">Dünya çapında 1,340,076 oda seni bekliyor!</p>
+        <p className="md:text-lg lg:text-xl">
+          Dünya çapında <b>1,340,076</b> oda seni bekliyor!
+        </p>
       </div>
     </div>
   );
