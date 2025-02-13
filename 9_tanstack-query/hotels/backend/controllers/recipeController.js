@@ -65,6 +65,9 @@ exports.createRecipe = (req, res) => {
     return res.status(400).json({ message: "Lütfen bütün değerli tanımlayın" });
   }
 
+  //! string olarak gelen özellikleri diziye çevir
+  newRecipe.amenities = newRecipe.amenities.split(",");
+
   //3) veriye id ekle
   newRecipe.id = crypto.randomUUID();
 

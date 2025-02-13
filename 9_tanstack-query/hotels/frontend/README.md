@@ -35,3 +35,17 @@ const { isLoading, error, data } = useQuery({
   queryFn: getPlaces,
 });
 ```
+
+## Component Template
+
+```js
+import { FC } from "react";
+
+interface Props {}
+
+const Images: FC = () => {
+  return <div>Images</div>;
+};
+
+export default Images;
+```

@@ -8,9 +8,7 @@ exports.controlId = (req, res, next) => {
 
   // tarif dizide bulunamazsa hata gönder
   if (!recipe) {
-    return next(
-      res.status(404).json({ message: "Aradığınız id'li eleman bulunamadı" })
-    );
+    return next(res.status(404).json({ message: "Aradığınız id'li eleman bulunamadı" }));
   }
 
   // tarifi bilgilerinin middleware'den bir sonraki adımda
