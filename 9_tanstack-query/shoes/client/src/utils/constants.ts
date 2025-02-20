@@ -2,6 +2,7 @@ export const numbers = ["38", "39", "40", "41", "42", "43", "44", "45", "46", "4
 
 export const colors = [
   { code: "#4A69E2", id: "blue" },
+  { code: "#DC143C", id: "red" },
   { code: "#FFA52F", id: "yellow" },
   { code: "#232321", id: "black" },
   { code: "#234D41", id: "green" },

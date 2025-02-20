@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AuthResponse, LoginData, RegisterData, Shoe, User } from "../types";
+import { AuthResponse, LoginData, RegisterData, Shoe, ShoeData, User } from "../types";
 
 // axios özelleştirme
 const api = axios.create({
@@ -63,4 +63,7 @@ export const authApi = {
 export const shoesApi = {
   getAll: () => api.get<Shoe[]>("/shoes"),
   getById: (id: string) => api.get<Shoe>(`/shoes/${id}`),
+  create: (data: ShoeData) => api.post<Shoe>("/shoes", data),
+  edit: (id: string, data: ShoeData) => api.put<Shoe>(`/shoes/${id}`, data),
+  delete: (id: string) => api.delete(`/shoes/${id}`),
 };

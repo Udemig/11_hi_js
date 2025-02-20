@@ -35,13 +35,15 @@ export interface Shoe {
   name: string;
   picture: string[];
   description: string;
-  isNew: boolean;
+  isNew?: boolean;
   discount: number;
   size: string;
   color: string;
   gender: "men" | "women";
   price: number;
-  __v: 0;
   createdAt: string;
   updatedAt: string;
 }
+
+// Shoe Type for FormData
+export type ShoeData = Omit<Shoe, "_id" | "picture" | "createdAt" | "updatedAt">;
