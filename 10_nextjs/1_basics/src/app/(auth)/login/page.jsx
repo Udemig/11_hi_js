@@ -10,7 +10,7 @@ export const delay = async (ms = 1000) => {
 
 const Login = async () => {
   await delay(2000);
-  throw new Error("Giriş yetkiniz yok..");
+  // throw new Error("Giriş yetkiniz yok..");
 
   return <div>Login</div>;
 };

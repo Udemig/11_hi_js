@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-playwrite: var(--playwrite);
+    --font-kissing: var(--kissing);
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  color: #ededed;
+  background: #0a0a0a;
+}
+
+@layer components {
+  .box {
+    @apply border p-5 rounded-md;
+  }
+
+  .server-comp {
+    @apply border border-blue-500 bg-blue-500/10 w-full h-full grid place-items-center p-5;
+  }
+
+  .client-comp {
+    @apply border border-red-500 bg-red-500/10 flex flex-col justify-center p-5;
+  }
+
+  .client {
+    @apply bg-red-500 p-2 rounded-md text-base font-semibold my-10 text-center;
+  }
+
+  .server {
+    @apply bg-blue-500 p-2 rounded-md text-base font-semibold my-10 text-center;
+  }
+}

@@ -75,3 +75,19 @@
 - `not-found`: 404 sayfası tanımlamaya yarar
 - `loading`: bir sayfa async await ile beklediği süre boyunca syayfanın yerin ekrana basılır
 - `error`: bir sayfada hata oluştuğu ada otomatik olarak ekrana basılır
+
+# Static Site Generation (SSG)
+
+- Nextjs'de static ve dynamic page kavramları sayfanın nasıl oluşturulduğunu ve kullanıcıya hangi yoldan sunulacağınız ifade eder.
+
+1. Static Page
+
+- Derleme aşamasında (build-time) oluşturulur ve HTML dosyaları olarak sunucuya yüklenir. Bu sayfalar, içeriklerinde değişiklik olmadıkça tekrarden oluşturulmazlar
+
+- Performans çok hızlıdır, çümnkü sayfalar bir kez oluşturulur ve CDN üzeirnden önbelleğe alınabilir. Bu sayede her istek sunucuda işlenmez.
+
+- SEO açısından statik sayfalar iyidir. Sayfa içeriği kolayca indexlenebiliri
+
+2. Dynamic Page
+
+- Dinamik sayfalar, her kullancı isteğinden dinamik oluşturulur. Yani sayfa içeriği kullanıcıdan kullanıcıya / paremetreye bağlı değişebilir.
