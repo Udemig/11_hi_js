@@ -37,3 +37,8 @@ body {
     @apply bg-blue-500 p-2 rounded-md text-base font-semibold my-10 text-center;
   }
 }
+
+.active {
+  font-weight: bold !important;
+  color: red;
+}

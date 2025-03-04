@@ -1,0 +1,4 @@
+# Kurulum
+
+- mongoose
+- stripe

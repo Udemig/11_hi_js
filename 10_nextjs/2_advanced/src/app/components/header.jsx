@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getRecipes } from "../service";
 import { kissing } from "../layout";
+import NavLink from "./navLink";
 
 const Header = async () => {
   // tarfiler sayfasında attığımız api istepini header componentında da attık
@@ -13,8 +14,9 @@ const Header = async () => {
 
       <nav className="flex gap-5">
         <Link href="/recipes">Tarifler({recipes.length})</Link>
-        <Link href="/hakkimizda">Hakkımızda</Link>
-        <Link href="/iletisim">İletişim</Link>
+
+        <NavLink path="/hakkimizda" label="Hakkımızda" />
+        <NavLink path="/iletisim" label="İletişim" />
       </nav>
     </header>
   );

@@ -2,6 +2,7 @@ import { getRecipe, getRecipes } from "../../service";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Button from "./button";
 
 // Bu detay sayfasının alabilecğei parametrelerin listesini döndürücez
 // Next'de bu listedeki parametreler için detay sayfasının statik verisyonlarını oluşturucak
@@ -27,9 +28,13 @@ const Page = async ({ params }) => {
   return (
     <div className="server-comp">
       <div className="flex flex-col gap-10 ">
-        <Link href="/recipes" className="border p-2 text-xl w-fit rounded-md">
-          Geri
-        </Link>
+        <div className="flex justify-between">
+          <Link href="/recipes" className="border p-2 text-xl w-fit rounded-md">
+            Geri
+          </Link>
+
+          <Button />
+        </div>
 
         <h1>{data.name}</h1>
 

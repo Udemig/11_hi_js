@@ -93,4 +93,17 @@
 - hem `server` hemde `client` component'larda kullanılır
 - 404 sayfasını renderla
 
-## todo diğer methodlar
+## usePathname
+
+- sadece `client` component'larda kullanulır
+- kullanıcının bulunduğu yola erişmemizi sağlar
+
+## useParams
+
+- sadece `client` component'larda kullanulır
+- url parametrelerine erişmeye yarar
+
+## useSearchParams
+
+- sadece `client` component'larda kullanulır
+- url arama parametrelerine erişmeye yarar

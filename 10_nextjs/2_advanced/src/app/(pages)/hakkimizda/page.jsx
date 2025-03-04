@@ -5,9 +5,9 @@ import { redirect } from "next/navigation";
 import Button from "../../components/button";
 
 const Page = () => {
-  if ("kullanıcın yetkisi yoksa") {
-    redirect("/iletisim");
-  }
+  // if ("kullanıcın yetkisi yoksa") {
+  //   redirect("/iletisim");
+  // }
 
   console.log("Hakkımızda render oldu");
   return (
