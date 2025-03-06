@@ -1,4 +1,4 @@
-import { Car } from "../types";
+import { Car, Order } from "../types";
 
 const API_URL = process.env.API_URL;
 
@@ -31,6 +31,16 @@ export const getPaymentUrl = async (car: Car): Promise<GetPaymentUrlReturn> => {
     method: "POST",
     body: JSON.stringify(car),
   });
+
+  return res.json();
+};
+
+type GetOrdersReturn = {
+  orders: Order[];
+};
+
+export const getOrders = async (): Promise<GetOrdersReturn> => {
+  const res = await fetch(`http://localhost:3000/api/orders`);
 
   return res.json();
 };

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { FaBell, FaHeart } from "react-icons/fa";
-import { RiSettings4Fill } from "react-icons/ri";
+import { AiFillDollarCircle as Dollar } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -24,9 +24,9 @@ const Header = () => {
         <div className="icon max-sm:hidden">
           <FaBell />
         </div>
-        <div className="icon text-lg">
-          <RiSettings4Fill />
-        </div>
+        <Link href="/orders" className="icon text-lg">
+          <Dollar />
+        </Link>
       </div>
     </header>
   );

@@ -14,3 +14,14 @@ export interface Car {
   capacity: number;
   gasoline: number;
 }
+
+export interface Order {
+  _id: string;
+  product: Car;
+  money_spend: number;
+  currency: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: 0;
+}

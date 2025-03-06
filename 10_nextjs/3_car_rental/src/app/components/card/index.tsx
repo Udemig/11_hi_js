@@ -32,8 +32,8 @@ const Card = ({ car }: Props) => {
         </div>
 
         <div className="flex max-md:flex-col max-md:justify-center max-md:items-start gap-5 justify-between">
-          {arr.map((i) => (
-            <div className="text-zinc-500 flex justify-center items-center gap-2 text-lg">
+          {arr.map((i, key) => (
+            <div key={key} className="text-zinc-500 flex justify-center items-center gap-2 text-lg">
               <p>{i.icon}</p>
               <p>{i.value}</p>
             </div>

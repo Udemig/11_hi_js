@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import Car from "./Car";
 
 export interface IOrder {
   _id: string;
@@ -20,7 +21,6 @@ const orderSchema = new Schema<IOrder>(
   { timestamps: true }
 );
 
-const Order =
-  mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
+const Order = mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
 
 export default Order;
