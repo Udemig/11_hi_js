@@ -1,0 +1,15 @@
+---
+description: Tech Stack
+globs: 
+---
+### Core Stack
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **HTTP Client:** Next.js fetch API (native)
+
+### Additional Libraries
+- **Routing:** Next.js App Router (native)
+- **State Management:** React Context API veya Redux Toolkit
+- **Styling:** Tailwind CSS
+- **Notifications:** React-Toastify
+- **Testing:** Jest, React Testing Library

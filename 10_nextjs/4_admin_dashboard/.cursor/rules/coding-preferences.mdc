@@ -1,0 +1,36 @@
+---
+description: Coding Preferences
+globs: 
+---
+# Simplicity and Maintainability
+- Always prefer simple, clear, and readable solutions optimized for Next.js architecture.
+- Maintain codebase structure aligning with Next.js conventions (app, components, hooks, lib, utils, etc.).
+- Refactor proactively to keep files under 200-300 lines of code; split large components into smaller, reusable Next.js components or server/client modules.
+
+# Avoid Duplication
+- Always check existing Next.js pages, components, hooks, or utility functions for similar implementations before creating new ones.
+- Utilize Next.js built-in patterns (layouts, server actions, middleware, etc.) to prevent redundant logic.
+- Temporarily preserve old implementations when introducing significant updates, clearly marked for removal after validation.
+
+# Environment Considerations
+- Explicitly handle environment-specific logic using Next.js built-in environment variables (`process.env.NODE_ENV`) and `.env.local`/`.env.production`.
+- Ensure code changes or config updates (e.g., `next.config.js`) do not negatively affect unintended environments.
+
+# Scoped Changes
+- Limit code changes strictly to requested features or clearly defined and well-understood improvements within Next.js patterns.
+- Avoid unrelated modifications or unnecessary refactors alongside primary updates.
+
+# Bug Fixes and Patterns
+- When addressing issues, fully leverage existing Next.js and React patterns before introducing external libraries or custom implementations.
+- Introduce new dependencies or Next.js features only after careful evaluation and explicit approval.
+
+# Scripts and Temporary Code
+- Avoid adding temporary scripts or short-term utilities directly into Next.js pages/components.
+- Prefer dedicated scripts within `/scripts` or isolated utility files for temporary tasks or data migrations.
+
+# Data Management
+- Never introduce unnecessary database mocks or stubs in the Next.js development or production environments.
+- Utilize realistic data-fetching approaches (server actions, Next.js loaders, etc.) rather than mocked or stubbed data.
+
+# Environment Files
+- Never overwrite `.env`, `.env.local`, or other environment configuration files without explicit confirmation and approval.

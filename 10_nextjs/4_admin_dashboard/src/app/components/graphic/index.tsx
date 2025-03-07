@@ -9,7 +9,7 @@ const Graphic: FC = async () => {
     <div className="mt-10 bg-white rounded-lg p-5">
       <h2 className="font-semibold text-lg">Satış Detayları</h2>
 
-      <LineGraph />
+      <LineGraph orders={orders} />
     </div>
   );
 };

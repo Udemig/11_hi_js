@@ -74,9 +74,9 @@
     },
     {
       "id": "7",
-      "name": "LG 65-Inch 8K Smart TV",
+      "name": "LG 65-Inch 6K Smart TV",
       "category": "Electronics",
-      "price": 999.99,
+      "price": 999.98,
       "stock": 20,
       "description": "65-inch OLED display, webOS, Dolby Atmos sound.",
       "image_url": "https://picsum.photos/seed/7/500/500",
@@ -85,28 +85,16 @@
       "brand": "LG"
     },
     {
-      "id": "90d0",
-      "name": "IPAD",
+      "id": "43ae",
+      "name": "Macbook M3",
       "brand": "Apple",
-      "category": "Teknoloji",
-      "price": 787000,
-      "stock": 34,
-      "description": "Apple m1 çipli 16gb ram vs.",
-      "image_url": "https://picsum.photos/seed/73/500/500",
-      "rating": 4,
-      "reviews_count": 0
-    },
-    {
-      "id": "1459",
-      "name": "Samsung S26",
-      "brand": "Samsung",
-      "category": "Teknoloji",
-      "price": 1987000,
-      "stock": 67,
-      "description": "Apple m1 çipli 16gb ram vs.",
-      "image_url": "https://picsum.photos/seed/41/500/500",
-      "rating": 4,
-      "reviews_count": 0
+      "category": "Electronics",
+      "price": 1300,
+      "stock": 15,
+      "description": "The apple m1 is the new...",
+      "image_url": "https://m.media-amazon.com/images/I/719C6bJv8jL.jpg",
+      "rating": 4.1,
+      "reviews_count": 67
     }
   ],
   "users": [
