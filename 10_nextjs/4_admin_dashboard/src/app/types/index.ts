@@ -24,7 +24,7 @@ export type Order = {
       name: string;
       quantity: number;
       price: number;
-    },
+    }
   ];
   id: string;
 };
@@ -40,4 +40,34 @@ export type Product = {
   rating: number;
   reviews_count: number;
   brand: string;
+};
+
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  address: {
+    street: string;
+    city: string;
+    postal_code: string;
+    country: string;
+  };
+  phone: string;
+  orders: [
+    {
+      order_id: number;
+      product_id: number;
+      quantity: number;
+      total_price: number;
+      order_date: string;
+    },
+    {
+      order_id: number;
+      product_id: number;
+      quantity: number;
+      total_price: number;
+      order_date: string;
+    }
+  ];
 };

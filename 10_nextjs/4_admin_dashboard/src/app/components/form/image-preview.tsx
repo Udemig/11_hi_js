@@ -1,26 +1,31 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface ImagePreviewProps {
   initialImageUrl?: string;
   imageInputId: string;
 }
 
-const ImagePreview = ({ initialImageUrl = '', imageInputId }: ImagePreviewProps) => {
+const ImagePreview = ({
+  initialImageUrl = "",
+  imageInputId,
+}: ImagePreviewProps) => {
   const [imageUrl, setImageUrl] = useState(initialImageUrl);
   const [isValidImage, setIsValidImage] = useState(!!initialImageUrl);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Listen for changes to the input field
-    const imageInput = document.getElementById(imageInputId) as HTMLInputElement;
-    
+    const imageInput = document.getElementById(
+      imageInputId
+    ) as HTMLInputElement;
+
     const handleInputChange = () => {
       const newUrl = imageInput.value;
       setImageUrl(newUrl);
-      
+
       if (newUrl) {
         setIsLoading(true);
         // Create a test image to check if URL is valid
@@ -39,41 +44,43 @@ const ImagePreview = ({ initialImageUrl = '', imageInputId }: ImagePreviewProps)
         setIsLoading(false);
       }
     };
-    
+
     // Add listener
     if (imageInput) {
-      imageInput.addEventListener('input', handleInputChange);
+      imageInput.addEventListener("input", handleInputChange);
       // Initialize for initial value
       handleInputChange();
     }
-    
+
     // Cleanup
     return () => {
       if (imageInput) {
-        imageInput.removeEventListener('input', handleInputChange);
+        imageInput.removeEventListener("input", handleInputChange);
       }
     };
   }, [imageInputId]);
 
   return (
     <div>
-      <p className="block text-sm font-medium text-gray-700 mb-2">Image Preview</p>
+      <p className="block text-sm font-medium text-gray-700 mb-2">
+        Resim Önizleme
+      </p>
       <div className="relative h-48 w-full bg-gray-100 rounded-md overflow-hidden">
         {isLoading ? (
           <div className="flex items-center justify-center h-full text-gray-400">
-            Loading image...
+            Resim yükleniyor...
           </div>
         ) : isValidImage && imageUrl ? (
           <Image
             src={imageUrl}
-            alt="Product preview"
+            alt="Resim Önizleme"
             fill
             className="object-contain"
             unoptimized={true}
           />
         ) : (
           <div className="flex items-center justify-center h-full text-gray-400">
-            {imageUrl ? 'Invalid image URL' : 'No image available'}
+            {imageUrl ? "Geçersiz resim URL'i" : "Resim yok"}
           </div>
         )}
       </div>
@@ -81,4 +88,4 @@ const ImagePreview = ({ initialImageUrl = '', imageInputId }: ImagePreviewProps)
   );
 };
 
-export default ImagePreview; 
+export default ImagePreview;

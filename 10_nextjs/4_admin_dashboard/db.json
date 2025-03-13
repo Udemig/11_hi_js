@@ -2,7 +2,7 @@
   "products": [
     {
       "id": "1",
-      "name": "Apple iPhone 18 Pro Max",
+      "name": "Apple iPhone 14 Pro Max",
       "category": "Electronics",
       "price": 1299.99,
       "stock": 25,
@@ -95,6 +95,18 @@
       "image_url": "https://m.media-amazon.com/images/I/719C6bJv8jL.jpg",
       "rating": 4.1,
       "reviews_count": 67
+    },
+    {
+      "id": "2a68",
+      "name": "Mont",
+      "brand": "Piere Cardin",
+      "category": "Clothing",
+      "price": 7000,
+      "stock": 6,
+      "description": "bu mont.....",
+      "image_url": "https://aydinli-pc.a-cdn.akinoncloud.com/products/2024/10/24/1082422/279c0af3-2f2e-41d9-8640-beb56d3eb1bc_size2724x3540_quality100_cropCenter.jpg",
+      "rating": 4.5,
+      "reviews_count": 11
     }
   ],
   "users": [
@@ -162,6 +174,136 @@
       },
       "phone": "+90 542 987 6543",
       "orders": []
+    },
+    {
+      "id": "4",
+      "name": "Zeynep Aksoy",
+      "email": "zeynep.aksoy@example.com",
+      "password": "hashed_password_4",
+      "address": {
+        "street": "Bahçelievler Mah. Gül Sok. No: 12",
+        "city": "İzmir",
+        "postal_code": "35400",
+        "country": "Turkey"
+      },
+      "phone": "+90 535 789 1234",
+      "orders": [
+        {
+          "order_id": 1005,
+          "product_id": 2,
+          "quantity": 1,
+          "total_price": 999.99,
+          "order_date": "2024-09-05"
+        },
+        {
+          "order_id": 1006,
+          "product_id": 6,
+          "quantity": 1,
+          "total_price": 599.99,
+          "order_date": "2024-10-12"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Burak Yılmaz",
+      "email": "burak.yilmaz@example.com",
+      "password": "hashed_password_5",
+      "address": {
+        "street": "Cumhuriyet Cad. 56/3",
+        "city": "Bursa",
+        "postal_code": "16100",
+        "country": "Turkey"
+      },
+      "phone": "+90 544 321 8765",
+      "orders": []
+    },
+    {
+      "id": "6",
+      "name": "Ayşe Çelik",
+      "email": "ayse.celik@example.com",
+      "password": "hashed_password_6",
+      "address": {
+        "street": "Bağdat Cad. No: 153 D:7",
+        "city": "İstanbul",
+        "postal_code": "34728",
+        "country": "Turkey"
+      },
+      "phone": "+90 533 456 7890",
+      "orders": [
+        {
+          "order_id": 1007,
+          "product_id": 7,
+          "quantity": 1,
+          "total_price": 999.98,
+          "order_date": "2024-08-18"
+        },
+        {
+          "order_id": 1008,
+          "product_id": 3,
+          "quantity": 2,
+          "total_price": 699.98,
+          "order_date": "2024-09-30"
+        },
+        {
+          "order_id": 1009,
+          "product_id": 5,
+          "quantity": 1,
+          "total_price": 180,
+          "order_date": "2024-10-05"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Emre Şahin",
+      "email": "emre.sahin@example.com",
+      "password": "hashed_password_7",
+      "address": {
+        "street": "Merkez Mah. Atatürk Cad. No: 42",
+        "city": "Antalya",
+        "postal_code": "07100",
+        "country": "Turkey"
+      },
+      "phone": "+90 536 897 2345",
+      "orders": [
+        {
+          "order_id": 1010,
+          "product_id": 2,
+          "quantity": 1,
+          "total_price": 999.99,
+          "order_date": "2024-10-08"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Selin Özkan",
+      "email": "selin.ozkan@example.com",
+      "password": "hashed_password_8",
+      "address": {
+        "street": "Yeni Mah. Lale Sok. No: 23/5",
+        "city": "Eskişehir",
+        "postal_code": "26000",
+        "country": "Turkey"
+      },
+      "phone": "+90 538 765 4321",
+      "orders": [
+        {
+          "order_id": 1011,
+          "product_id": 6,
+          "quantity": 1,
+          "total_price": 599.99,
+          "order_date": "2024-09-20"
+        },
+        {
+          "order_id": 1012,
+          "product_id": 1,
+          "quantity": 1,
+          "total_price": 1299.99,
+          "order_date": "2024-10-15"
+        }
+      ]
     }
   ],
   "orders": [

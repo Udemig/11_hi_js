@@ -25,3 +25,27 @@ body {
     display: block;
   }
 }
+
+@layer components {
+  .page {
+    @apply p-5 md:px-8;
+  }
+
+  .title {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+
+  .button {
+    @apply border shadow rounded-md p-2 hover:shadow-lg transition;
+  }
+}
+
+@layer utilities {
+  th {
+    @apply py-[15px] px-[20px] whitespace-nowrap;
+  }
+
+  td {
+    @apply p-[20px] text-center border-b border-zinc-300;
+  }
+}

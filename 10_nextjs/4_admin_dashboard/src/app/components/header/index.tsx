@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Input from "./input";
 import { BiSolidBellRing } from "react-icons/bi";
-import man from "@/app/assets/images/man.webp";
+import man from "@/app/assets/images/user_image.webp";
 import Image from "next/image";
 
 const Header: FC = () => {
@@ -13,7 +13,13 @@ const Header: FC = () => {
         <BiSolidBellRing className="text-xl cursor-pointer" />
 
         <div className="flex gap-3">
-          <Image src={man} width={40} height={40} alt="profile" className="object-contain" />
+          <Image
+            src={man}
+            width={50}
+            height={50}
+            alt="profile"
+            className="size-12 rounded-full"
+          />
 
           <div>
             <p className="font-semibold">Furkan Evin</p>
